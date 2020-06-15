@@ -21,7 +21,16 @@ local tables = {
       `value` text COLLATE utf8_polish_ci NOT NULL COMMENT 'wartosc',
       PRIMARY KEY (`id`)
      ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci
-  ]]
+  ]],
+  ["fractions"] = [[
+    CREATE TABLE IF NOT EXISTS `%s` (
+      `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+      `name` varchar(120) COLLATE utf8_polish_ci NOT NULL,
+      `shortcut` varchar(6) COLLATE utf8_polish_ci NOT NULL,
+      `color` int(11) NOT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci
+   ]]
 }
 
 function initializeTables()
