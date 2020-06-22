@@ -3,29 +3,14 @@ local fractionNameById = {}
 local fractionIdByName = {}
 local resourceFractions = {}
 
-function getFractionsIds()
-  local t = {}
-  for fId in pairs(fractions)do
-    t[#t + 1] = fId
-  end
-  return t
-end
-
-function cacheFractions()
-  cacheFractionsNameId()
-  cacheFractionsMembers()
-  cacheRanks()
-end
-
 function cacheFractionsNameId()
   fractionNameById = {}
   fractionIdByName = {}
-  
+
   local results = exports.db:queryTable("select id,name from %s", "fractions")
   for i,v in ipairs(results)do
     fractionNameById[v.id] = v.name
     fractionIdByName[v.name] = v.id
-    cacheFractionFromDatabaseById(v.id)
   end
 end
 
@@ -97,13 +82,9 @@ function createFraction(name, shortcut, color)
   end
 end
 
-function fractionExists(fid)
-  return fractions[fid] and true or false
-end
-
 function cleanUpFractions()
 
 end
 
-addEventHandler("onResourceStart", resourceRoot, cacheFractions)
+addEventHandler("onResourceStart", resourceRoot, cacheFractionsNameId)
 addEventHandler("onResourceStop", resourceRoot, cleanUpFractions)
