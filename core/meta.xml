@@ -6,7 +6,17 @@
 
 	<script src="players/accounts.lua" type="server"></script>
   
+	<script src="privilages.lua" type="server"></script>
+
 	<script src="fractions/fractions.lua" type="server"></script>
+	<script src="fractions/members.lua" type="server"></script>
+	<script src="fractions/ranks.lua" type="server"></script>
+
+	<script src="components/components.lua" type="server"></script>
+	<script src="components/saveComponent.lua" type="server"></script>
+
+	<script src="vehicles/vehicles.lua" type="server"></script>
+	<script src="vehicles/types/type.lua" type="server"></script>
   
   <export function="getAccountIdByLogin" type="server"></export>
   <export function="getAccountInfo" type="server"></export>
