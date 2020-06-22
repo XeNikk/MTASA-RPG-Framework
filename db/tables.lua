@@ -101,6 +101,15 @@ local tables = {
       `wheelstatus` varchar(19) COLLATE utf8_polish_ci NOT NULL DEFAULT '1000,1000,1000,1000',
       PRIMARY KEY (`id`)
      ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci
+   ]],
+   ["gamemode"] = [[
+     CREATE TABLE IF NOT EXISTS `%s` (
+      `server_name` varchar(40) COLLATE utf8_polish_ci NOT NULL,
+      `game_type` varchar(40) COLLATE utf8_polish_ci NOT NULL,
+      `money_multiplayer` int(11) NOT NULL DEFAULT '1',
+      `free_premium` int(11) NOT NULL DEFAULT '0',
+      PRIMARY KEY (`server_name`)
+     ) InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci  
    ]]
 }
 
